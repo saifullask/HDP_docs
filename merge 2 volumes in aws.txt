@@ -1,0 +1,20 @@
+Create a mount point of 2 volumes in aws.
+
+
+
+[ec2-user@ip-172-31-75-25 ~]$ lsblk
+[ec2-user@ip-172-31-75-25 ~]$  sudo file -s /dev/xvdb
+
+[ec2-user@ip-172-31-75-25 ~]$  sudo mkfs -t ext4 /dev/xvdb
+
+
+[ec2-user@ip-172-31-75-25 ~]$ sudo mkdir /Application
+[ec2-user@ip-172-31-75-25 ~]$ sudo mount -a
+[ec2-user@ip-172-31-75-25 ~]$ sudo vi /etc/fstab
+
+Add the below line in fstab atv bottom.
+/dev/xvdb   /Application   ext4    defaults,nofail  0 0
+
+[ec2-user@ip-172-31-75-25 ~]$ sudo mount -a
+
+fstabe

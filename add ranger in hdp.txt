@@ -1,0 +1,26 @@
+Add Ranger Service in HDP.
+
+Go to MYSQL
+
+create database rangerdb
+
+
+CREATE USER 'rangerdba'@'localhost' IDENTIFIED BY 'rangerdba';
+GRANT ALL PRIVILEGES ON *.* TO 'rangerdba'@'localhost';
+CREATE USER 'rangerdba'@'%' IDENTIFIED BY 'rangerdba';
+GRANT ALL PRIVILEGES ON *.* TO 'rangerdba'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'rangerdba'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'rangerdba'@'%' WITH GRANT OPTION;
+exit;
+sudo su -
+passwd
+admin (give password to root)
+
+grant all privileges on *.* to 'root'@'hostname' identified by 'passwordofroot' with grant option;
+(example: grant all privileges on *.* to 'root'@'ip-172-31-12-44.us-east-2.compute.internal' identified by 'admin' with grant option;)
+FLUSH PRIVILEGES;
+commit;
+
+
+
+
